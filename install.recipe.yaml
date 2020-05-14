@@ -1,0 +1,14 @@
+recipe:
+  Rx: install
+  args:
+    - schema=jyut6ping3
+  description: >-
+    Install rime-component jyut6ping3 patch
+   
+install_files: >-
+  *.yaml
+  
+patch_files:
+  ${schema:-jyut6ping3}.custom.yaml:
+    - patch/+:
+        __include: component_jyut6ping3_patch:/patch
