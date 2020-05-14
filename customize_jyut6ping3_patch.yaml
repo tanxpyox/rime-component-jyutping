@@ -1,0 +1,22 @@
+patch:
+  component_jyut6ping3:
+    tag: component_jyut6ping3
+    dictionary: component_jyut6ping3
+    prefix: "r"
+    suffix: ";"
+    tips: 〔拼音〕
+    preedit_format:
+      - xform/([aeioumngptk])vv/$1⁴/
+      - xform/([aeioumngptk])xx/$1⁵/
+      - xform/([aeioumngptk])qq/$1⁶/
+      - xform/([aeioumngptk])v/$1¹/
+      - xform/([aeioumngptk])x/$1²/
+      - xform/([aeioumngptk])q/$1³/
+  
+  keykey_binder:
+    import_preset: default
+    bindings:
+      - {accept: "r", toggle: component_suggestion, when: always}
+  
+  recognizer:
+    component_jyut6ping3: "^r[a-z0-9]*;?$"
