@@ -1,21 +1,18 @@
 patch:
-  schema:
-    dependencies/+: 
-      - component_jyut6ping3
-  
-  engine:
-    segmentor/@before 4:
-      - affix_segmentator@component_jyut6ping3
-    translators/+:
-      - script_translator@component_jyut6ping3
-    
-  
+  'schema/dependencies/@next':
+      component_jyut6ping3
+  'engine/segmentors/@before 3':
+      affix_segmentor@component_jyut6ping3
+  'engine/translators/@before 3':
+      script_translator@component_jyut6ping3
+
+
   component_jyut6ping3:
     tag: component_jyut6ping3
     dictionary: component_jyut6ping3
-    prefix: "r"
+    prefix: r
     suffix: ";"
-    tips: 〔拼音〕
+    tips: "〔拆字〕"
     preedit_format:
       - xform/([aeioumngptk])vv/$1⁴/
       - xform/([aeioumngptk])xx/$1⁵/
@@ -23,15 +20,13 @@ patch:
       - xform/([aeioumngptk])v/$1¹/
       - xform/([aeioumngptk])x/$1²/
       - xform/([aeioumngptk])q/$1³/
-      
-  reverse_lookup:
-    tags/+:
-      - component_jyut6ping3
-  
-  recognizer:
-    component_jyut6ping3: "^r[a-z0-9]*;?$"
-    
-  key_binder:
-    import_preset: default
-    bindings:
-      - {accept: "r", toggle: component_suggestion, when: always}
+
+  reverse_lookup/tags/@next:
+    component_jyut6ping3
+
+  recognizer/patterns/component_jyut6ping3: "^r[a-z]*;?$"
+
+#  key_binder:
+#    import_preset: default
+#    bindings/+:
+#      - {accept: "r", toggle: component_suggestion, when: always}
