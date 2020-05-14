@@ -3,8 +3,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: jyut6ping3
-  name: 粵語拼音
+  schema_id: component_jyut6ping3
+  name: 粵拼拆字
   version: "0.3.3"
   author:
     - sgalal <ayaka@mail.shn.hk>
