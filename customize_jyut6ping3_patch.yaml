@@ -1,4 +1,15 @@
 patch:
+  schema:
+    dependencies/+: 
+      - component_jyut6ping3
+  
+  engine:
+    segmentor/@before 4:
+      - affix_segmentator@component_jyut6ping3
+    translators/+:
+      - script_translator@component_jyut6ping3
+    
+  
   component_jyut6ping3:
     tag: component_jyut6ping3
     dictionary: component_jyut6ping3
@@ -12,11 +23,15 @@ patch:
       - xform/([aeioumngptk])v/$1¹/
       - xform/([aeioumngptk])x/$1²/
       - xform/([aeioumngptk])q/$1³/
-  
-  keykey_binder:
-    import_preset: default
-    bindings:
-      - {accept: "r", toggle: component_suggestion, when: always}
+      
+  reverse_lookup:
+    tags/+:
+      - component_jyut6ping3
   
   recognizer:
     component_jyut6ping3: "^r[a-z0-9]*;?$"
+    
+  key_binder:
+    import_preset: default
+    bindings:
+      - {accept: "r", toggle: component_suggestion, when: always}
