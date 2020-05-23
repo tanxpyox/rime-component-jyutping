@@ -10,4 +10,5 @@ bash rime-install tanxpyox/rime-component:customize:schema=jyut6ping3 tanxpyox/r
 ```
 
 安裝後：
-按<kbd> r </kbd>+`粵拼`即可組字
+* <kbd> ctrl </kbd> + <kbd> ` </kbd> 啓動「拆字」模式，然後
+* 撳<kbd> r </kbd>+`粵拼`即可組字
