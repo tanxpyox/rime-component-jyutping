@@ -6,7 +6,7 @@ recipe:
     Install rime-component jyut6ping3 patch
    
 install_files: >-
-  *.yaml
+  component_jyut6ping3*.yaml
   
 patch_files:
   ${schema:-jyut6ping3}.custom.yaml:

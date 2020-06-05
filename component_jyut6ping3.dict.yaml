@@ -8,7 +8,7 @@
 
 ---
 name: component_jyut6ping3
-version: "2020.05.04"
+version: "2020.05.15"
 sort: by_weight
 use_preset_vocabulary: false
 import_tables:
